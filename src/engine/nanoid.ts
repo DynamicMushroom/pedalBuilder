@@ -1,0 +1,7 @@
+// Minimal nanoid replacement — no dependency needed
+export function nanoid(size = 10): string {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  return Array.from(crypto.getRandomValues(new Uint8Array(size)))
+    .map(b => chars[b % chars.length])
+    .join('')
+}
