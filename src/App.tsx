@@ -2,6 +2,7 @@ import { BoardScene } from './three/BoardScene'
 import { PedalBoard } from './components/PedalBoard'
 import { FrequencyPlot } from './components/FrequencyPlot'
 import { Toolbar } from './components/Toolbar'
+import { AudioPreview } from './components/AudioPreview'
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         </div>
         <div className="app-subtitle">Guitar pedal circuit simulator — PedalPCB catalog</div>
         <div className="header-actions">
+          <AudioPreview />
           <Toolbar />
         </div>
       </header>

@@ -320,6 +320,29 @@ body { margin: 0; overflow: hidden; height: 100vh; }
   text-align: center;
 }
 
+/* ── Audio preview button ── */
+.audio-btn {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.audio-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.audio-btn.playing {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(232, 160, 48, 0.08);
+}
+
 /* ── Toolbar / Add pedal drawer ── */
 .add-pedal-btn {
   font-size: 12px;

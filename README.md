@@ -81,7 +81,7 @@ Then add it to `src/engine/registry.ts`. For synth modules, place the file in `s
 ## Roadmap
 
 - [ ] ngspice-wasm integration for full nonlinear SPICE simulation
-- [ ] Web Audio API output — hear the filtered signal
+- [x] Web Audio API output — hear the filtered signal
 - [ ] Export signal chain as SPICE netlist
 - [ ] More PedalPCB circuits (modulation, delay, reverb)
 - [ ] Impedance mismatch modeling between stages
