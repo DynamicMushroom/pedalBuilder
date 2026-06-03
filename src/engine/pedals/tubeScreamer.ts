@@ -1,4 +1,4 @@
-import { PedalDef, FreqPoint } from '../types'
+import type { PedalDef, FreqPoint } from '../types'
 import { lpMag, hpMag, toDb, FREQS } from '../math'
 
 // TS-9 Tube Screamer style
@@ -44,6 +44,7 @@ export const tubeScreamer: PedalDef = {
   name: 'Tube Screamer',
   pcbRef: 'Green Bean (PedalPCB)',
   category: 'overdrive',
+  type: 'pedal',
   color: '#3a7d35',
   description: 'Warm mid-boosting overdrive. Drive focuses the midrange; Tone sweeps bass/treble balance.',
   knobs: [

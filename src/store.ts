@@ -1,11 +1,11 @@
 import { create } from 'zustand'
-import { BoardPedal, FreqPoint } from './engine/types'
-import { PEDAL_MAP } from './engine/registry'
+import type { BoardPedal, FreqPoint } from './engine/types'
+import { DEVICE_MAP } from './engine/registry'
 import { FREQS } from './engine/math'
 import { nanoid } from './engine/nanoid'
 
 function defaultKnobs(defId: string): Record<string, number> {
-  const def = PEDAL_MAP[defId]
+  const def = DEVICE_MAP[defId]
   return Object.fromEntries(def.knobs.map(k => [k.id, k.default]))
 }
 
@@ -17,7 +17,7 @@ function computeChain(pedals: BoardPedal[]): FreqPoint[] {
   return FREQS.map((f, i) => {
     let mag = 0
     for (const p of active) {
-      const def = PEDAL_MAP[p.defId]
+      const def = DEVICE_MAP[p.defId]
       if (!def) continue
       const pts = def.transferFn(p.knobValues, FREQS)
       mag += pts[i].mag
@@ -29,7 +29,7 @@ function computeChain(pedals: BoardPedal[]): FreqPoint[] {
 function computePerPedal(pedals: BoardPedal[]): Record<string, FreqPoint[]> {
   const out: Record<string, FreqPoint[]> = {}
   for (const p of pedals) {
-    const def = PEDAL_MAP[p.defId]
+    const def = DEVICE_MAP[p.defId]
     if (!def) continue
     out[p.uid] = def.transferFn(p.knobValues, FREQS)
   }

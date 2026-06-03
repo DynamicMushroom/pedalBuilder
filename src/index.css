@@ -360,6 +360,33 @@ body { margin: 0; overflow: hidden; height: 100vh; }
   border-bottom: 1px solid var(--border);
 }
 
+.drawer-tabs {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 10px;
+  background: var(--surface2);
+  border-radius: 5px;
+  padding: 2px;
+}
+.drawer-tab {
+  flex: 1;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 5px 8px;
+  background: transparent;
+  border: none;
+  border-radius: 3px;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.drawer-tab.active {
+  background: var(--surface);
+  color: var(--accent);
+}
+.drawer-tab:hover:not(.active) { color: var(--text); }
+
 .catalog-group { margin-bottom: 12px; }
 .catalog-group-label {
   font-size: 10px;
@@ -380,6 +407,7 @@ body { margin: 0; overflow: hidden; height: 100vh; }
   background: var(--surface2);
   border: 1px solid var(--border);
   border-left-width: 3px;
+  border-left-color: var(--catalog-color, var(--accent));
   border-radius: 4px;
   cursor: pointer;
   text-align: left;

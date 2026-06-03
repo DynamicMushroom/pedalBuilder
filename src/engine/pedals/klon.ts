@@ -1,4 +1,4 @@
-import { PedalDef, FreqPoint } from '../types'
+import type { PedalDef, FreqPoint } from '../types'
 import { lpMag, hpMag, toDb } from '../math'
 
 // Klon Centaur — "transparent" overdrive with internal clean/dirt blend
@@ -53,6 +53,7 @@ export const klon: PedalDef = {
   name: 'Klon Centaur',
   pcbRef: 'Castledine (PedalPCB)',
   category: 'overdrive',
+  type: 'pedal',
   color: '#c8a020',
   description: 'Transparent overdrive blending clean and clipped signals. Gain sweeps from clean boost to full drive.',
   knobs: [

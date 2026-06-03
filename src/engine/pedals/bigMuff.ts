@@ -1,4 +1,4 @@
-import { PedalDef, FreqPoint } from '../types'
+import type { PedalDef, FreqPoint } from '../types'
 import { lpMag, hpMag, notchMag, toDb } from '../math'
 
 // EHX Big Muff Pi — two clipping stages + classic V-shaped tone stack
@@ -52,6 +52,7 @@ export const bigMuff: PedalDef = {
   name: 'Big Muff Pi',
   pcbRef: 'Musket Fuzz (PedalPCB)',
   category: 'fuzz',
+  type: 'pedal',
   color: '#7b3a1e',
   description: 'Thick sustaining fuzz with a scooped mid tone stack. Sustain controls gain; Tone sweeps bass/treble.',
   knobs: [

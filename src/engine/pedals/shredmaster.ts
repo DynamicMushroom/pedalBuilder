@@ -1,4 +1,4 @@
-import { PedalDef, FreqPoint } from '../types'
+import type { PedalDef, FreqPoint } from '../types'
 import { lpMag, hpMag, notchMag, toDb } from '../math'
 
 // Marshall Shredmaster — classic 90s UK high-gain pedal
@@ -70,6 +70,7 @@ export const shredmaster: PedalDef = {
   name: 'Shredmaster',
   pcbRef: 'Harbinger One (PedalPCB)',
   category: 'distortion',
+  type: 'pedal',
   color: '#1a3a6e',
   description: 'Marshall-voiced high-gain distortion with active 3-band EQ. Contour shapes the signature mid response.',
   knobs: [

@@ -9,6 +9,17 @@ export function hpMag(f: number, fc: number): number {
   return x / Math.sqrt(1 + x * x)
 }
 
+// Second-order resonant LP and HP (biquad / state-variable)
+export function lp2Mag(f: number, fc: number, Q: number): number {
+  const w = f / fc
+  return 1 / Math.sqrt((1 - w * w) ** 2 + (w / Q) ** 2)
+}
+
+export function hp2Mag(f: number, fc: number, Q: number): number {
+  const w = f / fc
+  return (w * w) / Math.sqrt((1 - w * w) ** 2 + (w / Q) ** 2)
+}
+
 // Second-order bandpass magnitude (normalized peak = 1/Q at fc)
 export function bpMag(f: number, fc: number, Q: number): number {
   const w = f / fc

@@ -10,13 +10,14 @@ export interface KnobDef {
   taper?: KnobTaper
 }
 
-export type PedalCategory = 'fuzz' | 'overdrive' | 'distortion' | 'boost'
+export type PedalCategory = 'fuzz' | 'overdrive' | 'distortion' | 'boost' | 'vcf' | 'vca' | 'oscillator'
 
 export interface PedalDef {
   id: string
   name: string
   pcbRef: string
   category: PedalCategory
+  type: 'pedal' | 'synth'
   color: string
   knobs: KnobDef[]
   description: string

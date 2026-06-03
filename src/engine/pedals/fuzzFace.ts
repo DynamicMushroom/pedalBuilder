@@ -1,4 +1,4 @@
-import { PedalDef, FreqPoint } from '../types'
+import type { PedalDef, FreqPoint } from '../types'
 import { lpMag, hpMag, toDb } from '../math'
 
 // Germanium Fuzz Face (Dallas Arbiter style)
@@ -46,6 +46,7 @@ export const fuzzFace: PedalDef = {
   name: 'Fuzz Face',
   pcbRef: 'Hairball (PedalPCB)',
   category: 'fuzz',
+  type: 'pedal',
   color: '#c0392b',
   description: 'Germanium two-transistor fuzz. Vintage warmth with heavy saturation. Fuzz controls bias and gain.',
   knobs: [

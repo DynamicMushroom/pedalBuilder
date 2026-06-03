@@ -9,7 +9,7 @@ A browser-based guitar pedal circuit simulator. Build signal chains from the [Pe
 - **3D pedalboard** — Three.js / React Three Fiber view of your signal chain; drag to orbit
 - **Drag-and-drop chain** — reorder pedals, toggle bypass, mix and match circuits
 - **Real-time Bode plot** — frequency response updates instantly as you turn knobs; per-pedal curves plus combined response
-- **6 PedalPCB circuits** — analytical transfer functions derived from actual component values:
+- **6 pedal + 4 synth VCF circuits** — analytical transfer functions derived from actual component values:
 
 | Circuit | PedalPCB board | Category |
 |---------|---------------|----------|
@@ -19,6 +19,15 @@ A browser-based guitar pedal circuit simulator. Build signal chains from the [Pe
 | Boss DS-1 | Zapper | Distortion |
 | Fuzz Face (Ge) | Hairball | Fuzz |
 | Marshall Shredmaster | Harbinger One | Distortion |
+
+**Synthesizer VCF modules** (in `src/engine/synths/`):
+
+| Circuit | Hardware reference | Category |
+|---------|-------------------|----------|
+| Moog 904A VCF | Moog Music 904A | VCF |
+| ARP 2600 VCF | ARP 2600 Rev 3.2 | VCF |
+| Korg MS-20 VCF | Korg MS-20 (MS-01 filter board) | VCF |
+| SH-101 / TB-303 VCF | Roland SH-101 (IR3109) | VCF |
 
 ## Getting started
 
@@ -67,7 +76,7 @@ export const myPedal: PedalDef = {
 }
 ```
 
-Then add it to `src/engine/registry.ts`.
+Then add it to `src/engine/registry.ts`. For synth modules, place the file in `src/engine/synths/`, set `type: 'synth'`, use a synth category (`'vcf'`, `'vca'`, `'oscillator'`), and add it to `SYNTH_REGISTRY` in the registry. See [CONTRIBUTING.md](CONTRIBUTING.md) for transfer function guidelines.
 
 ## Roadmap
 

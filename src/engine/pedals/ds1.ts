@@ -1,4 +1,4 @@
-import { PedalDef, FreqPoint } from '../types'
+import type { PedalDef, FreqPoint } from '../types'
 import { lpMag, hpMag, toDb } from '../math'
 
 // Boss DS-1 Distortion
@@ -44,6 +44,7 @@ export const ds1: PedalDef = {
   name: 'DS-1 Distortion',
   pcbRef: 'Zapper (PedalPCB)',
   category: 'distortion',
+  type: 'pedal',
   color: '#e07020',
   description: 'Aggressive hard-clipping distortion. Distortion controls gain; Tone sweeps brightness.',
   knobs: [
